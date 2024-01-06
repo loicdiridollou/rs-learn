@@ -2,8 +2,12 @@
 name = "rs-learn"
 version = "0.1.0"
 edition = "2021"
+default-run = "rs-learn"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "guess_game"
+path = "src/guess_game.rs"
 
 [dependencies]
 rand = "0.8.5"
