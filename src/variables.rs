@@ -1,4 +1,4 @@
-pub fn var_main() {
+pub fn variables_main() {
     mutability();
     let val = constant();
     println!("Constant value is {}", val);
