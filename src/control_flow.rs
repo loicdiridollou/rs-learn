@@ -35,7 +35,14 @@ pub fn control_flow() {
         println!("{}", element);
     }
 
+    for element in a.iter() {
+        println!("{}", element);
+    }
+
     for element in -5..-2 {
         println!("{}", element);
     }
+
+    let b = &a[2..4];
+    println!("{:?}", b);
 }
