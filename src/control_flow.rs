@@ -23,8 +23,19 @@ pub fn control_flow() {
         cntr += 1;
     }
 
+    // while loop
     while cntr > 0 {
         println!("In the loop with counter value {}", cntr);
         cntr -= 1;
+    }
+
+    // for loop
+    let a: [i32; 6] = [0, 1, 2, 3, 4, 5];
+    for element in a {
+        println!("{}", element);
+    }
+
+    for element in -5..-2 {
+        println!("{}", element);
     }
 }
