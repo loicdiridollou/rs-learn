@@ -17,7 +17,7 @@ pub fn control_flow() {
     let mut cntr = 0;
     loop {
         println!("In the loop");
-        if cntr >= 10 {
+        if cntr >= 5 {
             break;
         }
         cntr += 1;
