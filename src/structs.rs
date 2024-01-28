@@ -27,6 +27,14 @@ pub fn structs_main() {
         "{:?}",
         build_user(String::from("John"), String::from("j.d@gmail.com"))
     );
+
+    let user3 = User {
+        user: String::from("new_name"),
+        email: String::from("new_email"),
+        ..user1
+    };
+
+    println!("{:?}", user3);
 }
 
 fn build_user(user: String, email: String) -> User {
