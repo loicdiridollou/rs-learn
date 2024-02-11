@@ -1,3 +1,5 @@
+use core::fmt;
+
 #[derive(Debug)]
 struct User {
     user: String,
@@ -48,10 +50,38 @@ fn build_user(user: String, email: String) -> User {
     };
 }
 
-#[derive(Debug)]
 struct Rectangle {
     width: i32,
     height: i32,
+}
+
+impl Rectangle {
+    fn area(&self) -> i32 {
+        return self.height * self.width;
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        return self.width > other.width && self.height > other.height;
+    }
+}
+
+impl Rectangle {
+    fn square(size: i32) -> Rectangle {
+        return Rectangle {
+            width: size,
+            height: size,
+        };
+    }
+}
+
+impl fmt::Display for Rectangle {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "Rectangle of dimensions (width {}, height {})",
+            self.width, self.height
+        )
+    }
 }
 
 fn area_main() {
@@ -59,10 +89,20 @@ fn area_main() {
         width: 4,
         height: 6,
     };
-    println!("The area of the rectangle is {}.", area(&rectangle));
-    println!("{:?}", rectangle)
-}
+    println!("The area of the rectangle is {}.", rectangle.area());
+    println!("{}", rectangle);
 
-fn area(rectangle: &Rectangle) -> i32 {
-    return rectangle.width * rectangle.height;
+    let rectangle2 = Rectangle {
+        width: 8,
+        height: 10,
+    };
+
+    if rectangle2.can_hold(&rectangle) {
+        println!("Rectangle2 can be contained in rectangle")
+    } else {
+        println!("Rectangle2 cannot be contained in rectangle")
+    };
+
+    let square_rect = Rectangle::square(20);
+    println!("{}", square_rect)
 }
