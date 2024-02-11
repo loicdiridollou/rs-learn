@@ -6,7 +6,7 @@ struct User {
     active: bool,
 }
 
-pub fn structs_main() {
+pub fn main() {
     let user1 = User {
         user: String::from("John"),
         email: String::from("j.d@gmail.com"),
@@ -35,6 +35,8 @@ pub fn structs_main() {
     };
 
     println!("{:?}", user3);
+
+    area_main()
 }
 
 fn build_user(user: String, email: String) -> User {
@@ -44,4 +46,23 @@ fn build_user(user: String, email: String) -> User {
         sign_in_count: 1,
         active: true,
     };
+}
+
+#[derive(Debug)]
+struct Rectangle {
+    width: i32,
+    height: i32,
+}
+
+fn area_main() {
+    let rectangle = Rectangle {
+        width: 4,
+        height: 6,
+    };
+    println!("The area of the rectangle is {}.", area(&rectangle));
+    println!("{:?}", rectangle)
+}
+
+fn area(rectangle: &Rectangle) -> i32 {
+    return rectangle.width * rectangle.height;
 }
