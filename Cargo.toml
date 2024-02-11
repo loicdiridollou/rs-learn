@@ -10,8 +10,12 @@ name = "guess_game"
 path = "src/guess_game.rs"
 
 [[bin]]
-name="struct"
+name="structs"
 path = "src/structs.rs"
+
+[[bin]]
+name="enums"
+path = "src/enums.rs"
 
 [dependencies]
 rand = "0.8.5"
