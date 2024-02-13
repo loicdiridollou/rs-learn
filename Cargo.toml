@@ -17,5 +17,9 @@ path = "src/structs.rs"
 name="enums"
 path = "src/enums.rs"
 
+[[bin]]
+name="collections"
+path = "src/colletions.rs"
+
 [dependencies]
 rand = "0.8.5"
