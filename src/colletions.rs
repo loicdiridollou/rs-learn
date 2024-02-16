@@ -1,5 +1,52 @@
+use std::collections::HashMap;
+
 fn main() {
-    vectors()
+    vectors();
+    strings();
+    hashmaps();
+}
+
+fn hashmaps() {
+    let blue = String::from("blue");
+    let red = String::from("red");
+    let mut new_map: HashMap<String, i32> = HashMap::new();
+
+    new_map.insert(blue, 10);
+    new_map.insert(red, 15);
+
+    let team_name = String::from("blue");
+    println!("{:?}", new_map.get(&team_name).unwrap());
+
+    for (key, val) in &new_map {
+        println!("{}, {}", key, val);
+    }
+
+    let text: String = String::from("this is a new string or is this");
+    let mut counter: HashMap<&str, i32> = HashMap::new();
+    for word in text.split_whitespace() {
+        let count = counter.entry(word).or_insert(0);
+        *count += 1;
+    }
+    println!("Number of word this: {}", counter.get("this").unwrap());
+    println!("Number of word new: {}", counter.get("new").unwrap());
+    println!("{:?}", counter);
+}
+
+fn strings() {
+    // strings are a collection of utf-8 bytes
+    let _s1 = String::from("Hello world");
+    let s2 = "grve3gr";
+    let _s3 = s2.to_string();
+    let mut s4 = String::from("grve3gr");
+
+    s4.push_str("additional");
+    s4.push('!');
+    println!("{}", s4);
+
+    let s5 = String::from("Hello");
+    let s6 = String::from("world");
+    let s7 = format!("{} {}", s5, s6);
+    println!("{}", s7);
 }
 
 fn vectors() {
