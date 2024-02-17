@@ -25,5 +25,9 @@ path = "src/colletions.rs"
 name="errors"
 path = "src/errors.rs"
 
+[[bin]]
+name="generic_types"
+path = "src/generic_types.rs"
+
 [dependencies]
 rand = "0.8.5"
