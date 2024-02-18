@@ -29,5 +29,9 @@ path = "src/errors.rs"
 name="generic_types"
 path = "src/generic_types.rs"
 
+[[bin]]
+name="traits"
+path = "src/traits.rs"
+
 [dependencies]
 rand = "0.8.5"
