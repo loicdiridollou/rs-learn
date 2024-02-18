@@ -17,6 +17,21 @@ fn main() {
 
     let coordinate = Coord { x: 1, y: 2 };
     println!("{}", coordinate);
+
+    let _integer = OptionI32::Some(5);
+    let _float = OptionF64::Some(5.0);
+    let _i32_none = OptionI32::None;
+    let _i64_none = OptionF64::None;
+}
+
+enum OptionI32 {
+    Some(i32),
+    None,
+}
+
+enum OptionF64 {
+    Some(f64),
+    None,
 }
 
 struct Coord<T> {
