@@ -80,6 +80,27 @@ fn returns_summarizable(switch: bool) -> Box<dyn Summary> {
     }
 }
 
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> Self {
+        Self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x = {}", self.x);
+        } else {
+            println!("The largest member is y = {}", self.y);
+        }
+    }
+}
+
 fn main() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
@@ -104,5 +125,9 @@ fn main() {
     notify(&article);
     notify(&tweet);
 
-    println!("{}", returns_summarizable(true).summarize())
+    println!("{}", returns_summarizable(true).summarize());
+
+    let new_pair = Pair { x: 4, y: 5 };
+
+    new_pair.cmp_display()
 }
