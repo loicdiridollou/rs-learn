@@ -128,6 +128,9 @@ fn main() {
     println!("{}", returns_summarizable(true).summarize());
 
     let new_pair = Pair { x: 4, y: 5 };
+    let point = Pair::new(3, 5);
+
+    point.cmp_display();
 
     new_pair.cmp_display()
 }
