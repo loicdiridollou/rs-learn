@@ -33,5 +33,9 @@ path = "src/generic_types.rs"
 name="traits"
 path = "src/traits.rs"
 
+[[bin]]
+name="lifetimes"
+path = "src/lifetimes.rs"
+
 [dependencies]
 rand = "0.8.5"
