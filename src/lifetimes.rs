@@ -1,6 +1,8 @@
 fn main() {
     understand_lifetimes();
     dangling_ref();
+    dangling_ref_inner_scope();
+    lifetimes_with_struct();
 }
 
 fn understand_lifetimes() {
@@ -18,10 +20,33 @@ fn dangling_ref() {
     println!("{}", longest(&s1, &s2))
 }
 
+fn dangling_ref_inner_scope() {
+    let s1: String = String::from("abgjroe");
+    let result: &str;
+    {
+        let s2: String = String::from("gjnre");
+        result = longest(&s1, &s2);
+        println!("{}", result)
+    }
+}
+
 fn longest<'a>(left: &'a str, right: &'a str) -> &'a str {
     if left.len() > right.len() {
         left
     } else {
         right
     }
+}
+
+fn lifetimes_with_struct() {
+    struct Importance<'a> {
+        part: &'a str,
+    }
+
+    let first_sent = String::from("Test");
+    let _i = Importance {
+        part: &first_sent.to_string(),
+    };
+
+    println!("{}", _i.part);
 }
