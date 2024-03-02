@@ -1,8 +1,12 @@
+use std::fmt::Display;
+
 fn main() {
     understand_lifetimes();
     dangling_ref();
     dangling_ref_inner_scope();
     lifetimes_with_struct();
+    let res = longest_with_an_announcement("terst", "589", "Hello world!");
+    println!("{}", res);
 }
 
 fn understand_lifetimes() {
@@ -49,4 +53,16 @@ fn lifetimes_with_struct() {
     };
 
     println!("{}", _i.part);
+}
+
+fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+where
+    T: Display,
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
 }
