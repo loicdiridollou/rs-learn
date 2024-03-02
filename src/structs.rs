@@ -42,12 +42,12 @@ pub fn main() {
 }
 
 fn build_user(user: String, email: String) -> User {
-    return User {
+    User {
         user,
         email,
         sign_in_count: 1,
         active: true,
-    };
+    }
 }
 
 struct Rectangle {
