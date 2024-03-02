@@ -37,5 +37,9 @@ path = "src/traits.rs"
 name="lifetimes"
 path = "src/lifetimes.rs"
 
+[[bin]]
+name="testing"
+path = "src/testing.rs"
+
 [dependencies]
 rand = "0.8.5"
