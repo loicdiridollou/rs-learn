@@ -98,6 +98,12 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
+    fn it_add_two_number() {
+        assert_eq!(4, add_two(2), "The function resulted in not adding 2.");
+    }
+
+    #[test]
     #[should_panic]
     fn greater_than_100() {
         Guess::new(200);
