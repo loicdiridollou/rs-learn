@@ -1,6 +1,6 @@
 use std::fmt;
 
-fn main() {
+pub fn main() {
     let larger = Rectangle {
         width: 8,
         height: 7,
@@ -13,10 +13,12 @@ fn main() {
     println!("{}", larger.can_hold(&smaller));
 
     let guess = Guess { value: 32 };
-    println!("{}", guess.value)
+    let _guess = Guess::new(32);
+    println!("{}", guess.value);
+    println!("{}", add_two(3));
 }
 
-struct Rectangle {
+pub struct Rectangle {
     width: u32,
     height: u32,
 }
