@@ -42,5 +42,9 @@ path = "src/lifetimes.rs"
 name="testing"
 path = "src/testing.rs"
 
+[[bin]]
+name="closures"
+path = "src/closures.rs"
+
 [dependencies]
 rand = "0.8.5"
